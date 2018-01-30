@@ -8,7 +8,19 @@ namespace Billetsystem.BilletLib
 {
     public abstract class BaseKøretøj
     {
-        public string Nummerplade { get; set; }
+        private string _nummerplade;
+        public string Nummerplade
+        {
+            get => _nummerplade;
+            set
+            {
+                if (value.Length > 7)
+                {
+                    throw new ArgumentException("nummerplade må maks. være syv tegn");
+                }
+                _nummerplade = value;
+            }
+        }
         public DateTime Dato { get; set; }
 
         public abstract int Pris();
