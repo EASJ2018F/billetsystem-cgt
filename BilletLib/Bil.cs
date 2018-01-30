@@ -10,7 +10,7 @@ namespace Billetsystem.BilletLib
     {
         public override int Pris()
         {
-            return 240;
+            return FratrækRabat(240);
         }
 
         public override string Køretøj()
