@@ -23,6 +23,22 @@ namespace Billetsystem.BilletLib.Tests
         {
             new BaseKøretøjImpl { Nummerplade = "12345678" };
         }
+
+        [TestMethod()]
+        public void BaseKøretøjBroBizzRabatTest()
+        {
+            var kt = new BaseKøretøjImplMedRabat();
+            kt.BroBizz = true;
+            Assert.AreEqual(9, kt.Pris()); // 9.5 rundet ned til 9
+        }
+
+        [TestMethod()]
+        public void BaseKøretøjIngenBroBizzRabatTest()
+        {
+            var kt = new BaseKøretøjImplMedRabat();
+            kt.BroBizz = false;
+            Assert.AreEqual(10, kt.Pris());
+        }
     }
 
     /// <summary>
@@ -40,6 +56,24 @@ namespace Billetsystem.BilletLib.Tests
         public override int Pris()
         {
             throw new NotImplementedException();
+        }
+    }
+
+    /// <summary>
+    /// Simpel BaseKøretøj-implementation med rabatunderstøttelse.
+    /// A helper for BaseKøretøjTests so that we are able to test
+    /// a BaseKøretøj that does not have custom behavior.
+    /// </summary>
+    public class BaseKøretøjImplMedRabat : BaseKøretøj
+    {
+        public override string Køretøj()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int Pris()
+        {
+            return FratrækRabat(10);
         }
     }
 }
