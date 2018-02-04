@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33FAAD05-CB8B-4D72-9619-3284ECDF9375}</ProjectGuid>
+    <ProjectGuid>{D9998FC0-0E17-4959-9A2C-73D3C0353FD8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BilletLib.Tests1</RootNamespace>
+    <RootNamespace>BilletLib.Tests</RootNamespace>
     <AssemblyName>BilletLib.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -56,17 +56,15 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="BaseKøretøjTests.cs" />
-    <Compile Include="BilTests.cs" />
-    <Compile Include="MCTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketIssuers\StorebaeltTicketIssuerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BilletLib\BilletLib.csproj">
-      <Project>{6758F5E7-32A4-4562-B27D-FE8E7D12021A}</Project>
+      <Project>{C2F9D32E-F141-4BE5-98A8-CA8497A75849}</Project>
       <Name>BilletLib</Name>
     </ProjectReference>
   </ItemGroup>
