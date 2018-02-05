@@ -11,6 +11,7 @@ namespace BilletLib.TicketIssuers.Tests
     [TestClass()]
     public class OeresundTicketIssuerTests
     {
+        // Looks fine but i cant see unit-test in Test explore
         [TestMethod()]
         public void IssueTicketCarTest()
         {
