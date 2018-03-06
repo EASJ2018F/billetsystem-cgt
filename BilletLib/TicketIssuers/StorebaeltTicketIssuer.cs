@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BilletLib.TicketIssuers
 {
+    /// <summary>
+    /// StorebaeltTicketIssuer is an ITicketIssuer implementation for Storebæltsbroen.
+    /// </summary>
     public class StorebaeltTicketIssuer : ITicketIssuer
     {
         private Dictionary<string, decimal> _vehicleTypeToTicketPrice = new Dictionary<string, decimal>
@@ -14,6 +17,10 @@ namespace BilletLib.TicketIssuers
             { "motorcycle", 125 },
         };
 
+        /// <summary>
+        /// IssueTicket issues a ticket for Storebæltsbroen.
+        /// Permitted vehicle types for the TicketOrder are: "car", "motorcycle".
+        /// </summary>
         public Ticket IssueTicket(TicketOrder o)
         {
             if (o == null)

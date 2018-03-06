@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BilletLib.TicketIssuers
 {
+    /// <summary>
+    /// OeresundTicketIssuer is an ITicketIssuer implementation for Øresundbroen.
+    /// </summary>
     public class OeresundTicketIssuer : ITicketIssuer
     {
         private const string VehicleCar = "car";
@@ -22,6 +25,10 @@ namespace BilletLib.TicketIssuers
             { VehicleMotorcycle, 73 },
         };
 
+        /// <summary>
+        /// IssueTicket issues a ticket for Øresundbroen.
+        /// Permitted vehicle types for the TicketOrder are: "car", "motorcycle".
+        /// </summary>
         public Ticket IssueTicket(TicketOrder o)
         {
             if (o == null)
@@ -39,12 +46,6 @@ namespace BilletLib.TicketIssuers
             else
             {
                 price = _vehicleTypeToTicketPriceBroBizz[o.VehicleType];
-            }
-
-            // Apply 5 % BroBizz discount
-            if (o.BroBizz)
-            {
-                price *= 0.95M;
             }
 
             // Issue ticket
