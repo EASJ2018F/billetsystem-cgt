@@ -5,6 +5,7 @@ namespace BilletLib
     /// <summary>
     /// Ticket represents an issued ticket.
     /// </summary>
+    [Serializable]
     public class Ticket
     {
         /// <summary>

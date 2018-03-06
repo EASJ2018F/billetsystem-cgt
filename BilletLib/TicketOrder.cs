@@ -5,6 +5,7 @@ namespace BilletLib
     /// <summary>
     /// TicketOrder represents an incoming request to issue a Ticket.
     /// </summary>
+    [Serializable]
     public class TicketOrder
     {
         /// <summary>
